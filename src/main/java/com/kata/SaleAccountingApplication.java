@@ -1,4 +1,4 @@
-package com.sale_accounting;
+package com.kata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
