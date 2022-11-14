@@ -1,3 +1,23 @@
 server:
   port: 8601
-
+#Main database configuration
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sale_accounting_database
+    username: postgres
+    password: postgres
+  #Configure Spring JPA + Hibernate
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: false
+        hbm2ddl:
+          auto: update
+        current_session_context_class: thread
+  ##Add filter config for use PATCH ,DELETE, PUT requests
+  mvc:
+    hidden-method:
+      filter:
+        enabled: true
