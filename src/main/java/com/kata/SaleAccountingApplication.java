@@ -16,12 +16,13 @@ public class SaleAccountingApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SaleAccountingApplication.class, args);
-        Product p = new Product("eee", "wewe", "scwf", "fwef", 333L, 444L);
-        productService.saveProduct(p);
-        productService.deleteByIdProduct(1L);
-        p = new Product("eee2", "wewe2", "scwf2", "fwef2", 333L, 444L);
-        productService.saveProduct(p);
-        productService.deleteAllProducts();
+//        Product p = new Product("eee", "wewe", "scwf", "fwef", 333L, 444L);
+//        productService.saveProduct(p);
+//        productService.deleteByIdProduct(1L);
+//        p = new Product("eee2", "wewe2", "scwf2", "fwef2", 333L, 444L);
+//        productService.saveProduct(p);
+//        productService.deleteAllProducts();
+        productService.saveProduct(new Product("eee233", "wewe233", "scwf233", "fwef233", 3333L, 444L));
         productService.saveProduct(new Product("eee23", "wewe23", "scwf23", "fwef23", 333L, 444L));
     }
 
