@@ -4,6 +4,7 @@ import com.kata.model.Product;
 import com.kata.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 
+    @Transactional
     @Override
     public Product getProduct(Long id) {
         if (!productRepository.existsById(id)) {
@@ -25,11 +27,13 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.getReferenceById(id);
     }
 
+    @Transactional
     @Override
     public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
 
+    @Transactional
     @Override
     public Product updateProduct(Product product) {
         if (!productRepository.existsById(product.getId())) {
@@ -38,11 +42,13 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.save(product);
     }
 
+    @Transactional
     @Override
     public List<Product> getAllProduct() {
         return productRepository.findAll();
     }
 
+    @Transactional
     @Override
     public void deleteByIdProduct(Long id) {
         if (!productRepository.existsById(id)) {
