@@ -2,7 +2,6 @@ package com.kata.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,13 +40,26 @@ public class Product {
     @Schema(description = "Объём товара")
     private Long volume;
 
-    public Product(String name, String description, String vendorCode, String externalCode, Long weight, Long volume) {
+    @Schema(description = "Закупочная цена")
+    private Double purchasePrice;
+
+    @Schema(description = "Цена продажи")
+    private Double salePrice;
+
+    @Schema(description = "Минимальная цена")
+    private Double minimalPrice;
+
+    public Product(String name, String description, String vendorCode, String externalCode, Long weight, Long volume
+            , Double purchasePrice, Double salePrice, Double minimalPrice) {
         this.name = name;
         this.description = description;
         this.vendorCode = vendorCode;
         this.externalCode = externalCode;
         this.weight = weight;
         this.volume = volume;
+        this.purchasePrice = purchasePrice;
+        this.salePrice = salePrice;
+        this.minimalPrice = minimalPrice;
     }
 
     public Product() {
